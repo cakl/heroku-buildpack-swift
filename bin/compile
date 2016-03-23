@@ -53,7 +53,8 @@ export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-li
 
 cd $BUILD_DIR
 echo "-----> Building Package"
-swift build --configuration release
+#swift build --configuration release
+swift build -Xcc -fblocks
 
 # These should be statically linked, seems a swift bug
 echo "-----> Copying dynamic libraries"
