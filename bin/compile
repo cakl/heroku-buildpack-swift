@@ -57,7 +57,7 @@ echo "Installing libkqueue"
 wget https://github.com/mheily/libkqueue/archive/v2.0.3.tar.gz
 tar -zxvf v2.0.3.tar.gz
 cd libkqueue-2.0.3
-configure && make && make install
+./configure && make && make install
 cd $ROOT_DIR
 
 #install libdispatch
