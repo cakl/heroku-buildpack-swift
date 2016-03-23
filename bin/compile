@@ -31,6 +31,9 @@ fi
 # Pre compile hook
 source "$BIN_DIR/steps/hooks/pre_compile"
 
+#install libdispatch
+git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure --with-swift-toolchain=<path-to-swift>/usr --prefix=<path-to-swift>/usr && make && make install
+
 # Install Swift
 cd "$BUILD_DIR"
 SWIFT_PREFIX="$(swiftenv prefix || true)"
