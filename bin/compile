@@ -52,7 +52,9 @@ fi
 export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-14.04/bin:$PATH"
 
 #install libkqueue
-git clone https://github.com/mheily/libkqueue.git && ./configure && make && make install
+#git clone https://github.com/mheily/libkqueue.git && ./configure && make && make install
+echo "APT GET"
+apt-get install autoconf libtool libkqueue-dev libkqueue0 libdispatch-dev libdispatch0 libhttp-parser-dev libcurl4-openssl-dev libhiredis-dev libbsd-dev
 
 #install libdispatch
 git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure --with-swift-toolchain="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr" --prefix="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr" && make && make install
