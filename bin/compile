@@ -54,9 +54,9 @@ export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-li
 #install libkqueue
 #git clone https://github.com/mheily/libkqueue.git && ./configure && make && make install
 echo "Installing libkqueue"
-wget https://github.com/mheily/libkqueue/archive/v2.0.3.tar.gz
-tar -zxvf v2.0.3.tar.gz
-cd libkqueue-2.0.3
+wget https://github.com/mheily/libkqueue/releases/download/v2.0.3/libkqueue-2.0.3.tar.gz
+tar -zxvf libkqueue-2.0.3.tar.gz
+cd libkqueue-2.0.3/
 ./configure && make && make install
 cd $ROOT_DIR
 
