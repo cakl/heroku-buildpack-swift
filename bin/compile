@@ -51,6 +51,7 @@ fi
 
 export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-14.04/bin:$PATH"
 
+export PATH="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr/bin:$PATH"
 #install libkqueue
 #git clone https://github.com/mheily/libkqueue.git && ./configure && make && make install
 #echo "Installing libkqueue"
