@@ -64,6 +64,11 @@ export PATH="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr/bin:$PATH"
 #install libdispatch
 #git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure --with-swift-toolchain="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr" --prefix="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr" && make && make install
 #git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure && make && make install
+git clone git://github.com/nickhutchinson/libdispatch.git && cd libdispatch
+mkdir libdispatch-build && cd libdispatch-build
+../configure
+make
+make install
 
 cd $BUILD_DIR
 echo "-----> Building Package"
