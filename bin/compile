@@ -51,7 +51,6 @@ fi
 
 export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-14.04/bin:$PATH"
 
-export PATH="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr/bin:$PATH"
 #install libkqueue
 #git clone https://github.com/mheily/libkqueue.git && ./configure && make && make install
 #echo "Installing libkqueue"
@@ -66,7 +65,7 @@ export PATH="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr/bin:$PATH"
 #git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure && make && make install
 git clone git://github.com/nickhutchinson/libdispatch.git && cd libdispatch
 mkdir libdispatch-build && cd libdispatch-build
-../configure --prefix="/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr"
+../configure --prefix="$ROOT_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr"
 make
 make install
 
