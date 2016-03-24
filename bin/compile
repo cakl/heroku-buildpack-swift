@@ -65,14 +65,14 @@ export PATH="$CACHE_DIR/clang-$CLANG_VERSION/clang+llvm-$CLANG_VERSION-x86_64-li
 #git clone https://github.com/apple/swift-corelibs-libdispatch.git && cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure && make && make install
 git clone git://github.com/nickhutchinson/libdispatch.git && cd libdispatch
 mkdir libdispatch-build && cd libdispatch-build
-../configure --prefix="$BIN_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr"
+../configure --prefix="$BIN_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr/lib/swift"
 make
 make install
 
 cd $BUILD_DIR
 echo "-----> Building Package"
 #swift build --configuration release
-swift build -Xcc -fblocks -Xswiftc -I"$BIN_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr" -Xlinker -L"$BIN_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr"
+swift build -Xcc -fblocks
 
 # These should be statically linked, seems a swift bug
 echo "-----> Copying dynamic libraries"
