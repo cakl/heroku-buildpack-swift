@@ -72,7 +72,7 @@ make install
 cd $BUILD_DIR
 echo "-----> Building Package"
 #swift build --configuration release
-swift build -Xcc -fblocks
+swift build -Xcc -fblocks -L"$BIN_DIR/DEVELOPMENT-SNAPSHOT-2016-03-01-a/usr"
 
 # These should be statically linked, seems a swift bug
 echo "-----> Copying dynamic libraries"
